@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Workout } = require('../models');
 const db = require('../models');
 
 router.get('/api/workouts', async (req, res) => {
@@ -22,6 +23,8 @@ router.put('/api/workouts/:id', async (req, res) => {
 router.get('/api/workouts/range', async (req, res) => {
   const results = await db.Workout.find();
   res.json(results);
+  console.log(res.json)
 });
+
 
 module.exports = router;
